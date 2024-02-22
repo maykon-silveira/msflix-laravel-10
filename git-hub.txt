@@ -1,0 +1,18 @@
+1 - git init 
+2 - git add .
+3 - git commit -m "first commit"
+4 - git config --global user.email "seu e-mail"
+5 - git commit -m "first commit"
+6 - Já estamos versionando nosso projeto local agora vamos enviar para um servidor remoto
+7 - git remote para ver se tem um apontamento 
+8 - vai no github e pega o caminho
+9 - user as instruções do git
+…or push an existing repository from the command line
+git remote add origin https://github.com/maykon-silveira/msflix-laravel-10.git
+10 - git remote e veja que está em origin 
+11 - dê agora um git remote -v para ver o que está acontencento, veja que já está apontado par aurl do git
+12 - Agora vamos renomear o nosso branch para main assim: git branch -M main
+13 - e agora vamos fazer um push, para enviar os arquivos e dai ele vai pedir par aautenticar sua maquina:
+ git push -u origin main
+14 - Agora toda alteração que eu fizer é feita no meu repositório 
+Vá em config abra o app.php e altere o time zone 
