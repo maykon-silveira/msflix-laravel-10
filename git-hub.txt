@@ -16,3 +16,12 @@ git remote add origin https://github.com/maykon-silveira/msflix-laravel-10.git
  git push -u origin main
 14 - Agora toda alteração que eu fizer é feita no meu repositório 
 Vá em config abra o app.php e altere o time zone 
+
+
+Arquivos do laravel:
+artsan = Vamos usar muito para criar controllers entrei outros arquivos de maneira rápida no laravel se digitar php artisan você vai ver uma série de comandos 
+composer.json = componetes do sistema 
+package.json = delcara todas as dependencias de front-end 
+phpunit.xml = é pra configuração de testes
+README.MD = É UMA DESCRIÇÃO DO GITHUB 
+vite.config.js = para copilar arquivos css e js e usar outros framworks 
