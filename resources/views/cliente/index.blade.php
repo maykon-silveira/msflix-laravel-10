@@ -255,6 +255,12 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('cliente.criar') }}">
+                <svg class="bi"><use xlink:href="#people"/></svg>
+                Cadastrar Clientes
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#graph-up"/></svg>
                 Relatórios
@@ -268,8 +274,55 @@
             </li>
           </ul>
 
-     
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+            <span>Menu </span>
+            <a class="link-secondary" href="#" aria-label="Add a new report">
+              <svg class="bi"><use xlink:href="#plus-circle"/></svg>
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-auto">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
+                Menu
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
+                Menu
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
+                Redes Sociais
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
+                Menu
+              </a>
+            </li>
+          </ul>
 
+          <hr class="my-3">
+
+          <ul class="nav flex-column mb-auto">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <svg class="bi"><use xlink:href="#gear-wide-connected"/></svg>
+                Meus Dados
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <svg class="bi"><use xlink:href="#door-closed"/></svg>
+                Sair 
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -289,8 +342,45 @@
         </div>
       </div>
 
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+      
 
+    
+      <div class="table-responsive small">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nome</th>
+              <th scope="col">CPF</th>
+              <th scope="col">Telefone</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Excluir</th>
+            </tr>
+          </thead>
+          <tbody>
+            @forelse($cliente as $cli)
+            
+           
+            <tr>
+              <td>{{ $cli->id }}</td>
+              <td>{{ $cli->nome }}</td>
+              <td>{{ $cli->cpf }}</td>
+              <td>{{ $cli->fone }}</td>
+              <td>{{ $cli->email }}</td>
+              <td><a href="" class="btn btn-primary">Editar</a></td>
+              <td><a href="" class="btn btn-danger">Excluir</a></td>
+            </tr>
+
+            @empty
+            <p>Não temos cadastros!</p>
+
+            @endforelse
+            
+                         
+          </tbody>
+        </table>
+      </div>
     </main>
   </div>
 </div>
