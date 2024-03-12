@@ -23,7 +23,7 @@ Route::post('/store-cliente', [ClienteController::class, 'store'])->name('client
 Route::get('/mostrar-cliente', [ClienteController::class, 'mostrar'])->name('cliente.mostrar');
 
 //formulario editar 
-Route::get('/editar-cliente', [ClienteController::class, 'editar'])->name('cliente.editar');
+Route::get('/editar-cliente/{cliente}', [ClienteController::class, 'editar'])->name('cliente.editar');
 
 //receber o editar 
 Route::put('/update-cliente', [ClienteController::class, 'update'])->name('cliente.update');

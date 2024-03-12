@@ -58,9 +58,10 @@ class ClienteController extends Controller
     }
 
     //formulario editar 
-    public function editar()
+    public function editar(Cliente $cliente)
     {
-        return view('cliente/editar');
+        //dd();
+        return view('cliente/editar', ['cliente' => $cliente]);
     }
 
     //editar no banco de dados 

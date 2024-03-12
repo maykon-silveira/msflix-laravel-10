@@ -368,7 +368,7 @@
               <td>{{ $cli->cpf }}</td>
               <td>{{ $cli->fone }}</td>
               <td>{{ $cli->email }}</td>
-              <td><a href="" class="btn btn-primary">Editar</a></td>
+              <td><a href="{{ route('cliente.editar', ['cliente' => $cli->id]) }}" class="btn btn-primary">Editar</a></td>
               <td><a href="" class="btn btn-danger">Excluir</a></td>
             </tr>
 
