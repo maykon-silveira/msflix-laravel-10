@@ -54,7 +54,7 @@ class ClienteController extends Controller
        Cliente::create($request->all());
 
        //redirecionamento de página
-       return redirect()->route('cliente.mostrar')->with('sucesso', 'Cliente Cadastrado com Sucesso!');
+       return redirect()->route('cliente.index')->with('sucesso', 'Cliente Cadastrado com Sucesso!');
     }
 
     //formulario editar 

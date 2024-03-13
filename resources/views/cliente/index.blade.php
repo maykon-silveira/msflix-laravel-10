@@ -334,6 +334,7 @@
           <div class="btn-group me-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Importar</button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
+            <a href="{{ route('cliente.criar') }}" class="btn btn-primary">Novo</a>
           </div>
           <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-1">
             <svg class="bi"><use xlink:href="#calendar3"/></svg>
