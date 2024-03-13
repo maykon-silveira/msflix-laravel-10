@@ -29,7 +29,7 @@ Route::get('/editar-cliente/{cliente}', [ClienteController::class, 'editar'])->n
 Route::put('/update-cliente/{cliente}', [ClienteController::class, 'update'])->name('cliente.update');
 
 //excluir
-Route::delete('/destroy-cliente', [ClienteController::class, 'destroy'])->name('cliente.destroy');
+Route::delete('/destroy-cliente/{cliente}', [ClienteController::class, 'destroy'])->name('cliente.destroy');
 
 //ROTAS DE CATEGORIAS 
 

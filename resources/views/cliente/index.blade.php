@@ -373,7 +373,17 @@
               <td>{{ $cli->fone }}</td>
               <td>{{ $cli->email }}</td>
               <td><a href="{{ route('cliente.editar', ['cliente' => $cli->id]) }}" class="btn btn-primary">Editar</a></td>
-              <td><a href="" class="btn btn-danger">Excluir</a></td>
+              <td>
+
+                <form action="{{ route('cliente.destroy', ['cliente'=> $cli->id ]) }}" method="post">
+                  @csrf {{-- so pode ser acessado se for uma solicitação do sistema e não aceita requisição de outra aplicação externa --}}
+                  @method('delete'){{-- Metodo para forçar o delete --}}
+                  {{--<button type="submit" class="btn btn-danger" onclick="return confirm('Realmente deseja Apagar esse cliente?')">Excluir</button>--}}
+                  <button type="submit" class="btn btn-danger">Excluir</button>
+                </form>
+               
+              
+              </td>
             </tr>
 
             @empty

@@ -1,0 +1,3 @@
+
+aplicar no button dentro dele para confirmar se deseja apagar
+onclick="return confirm('Realmente deseja Apagar esse cliente?')"

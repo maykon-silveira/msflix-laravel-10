@@ -86,8 +86,12 @@ class ClienteController extends Controller
     }
 
     // excluir a conta do banco de dados 
-    public function destroy()
+    public function destroy(Cliente $cliente)
     {
-        dd('Apagar');
+
+        //dd($cliente);
+        $cliente->delete();//só isso para deletar
+       //redirecionamento de página
+       return redirect()->route('cliente.index')->with('sucesso', 'Cliente Excluído com Sucesso!');
     }
 }
