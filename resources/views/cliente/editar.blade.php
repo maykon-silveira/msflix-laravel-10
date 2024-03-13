@@ -82,7 +82,7 @@
          <br>
         @endif
 
-        <form action="{{ route('cliente.update') }}" class="needs-validation" method="post">
+        <form action="{{ route('cliente.update', ['cliente' => $cliente->id ]) }}" class="needs-validation" method="post">
         @csrf <!-- PARA INDICAR QUE ESTÁ VINDO DE UMA PAGINA INTERNA -->
         @method('PUT')<!-- FORÇAR O METODO PUT-->
 

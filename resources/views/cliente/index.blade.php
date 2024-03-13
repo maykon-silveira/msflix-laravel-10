@@ -343,7 +343,11 @@
       </div>
 
       
-
+      @if(session('sucesso'))
+       <div class="alert alert-success">
+       {{session('sucesso')}}
+       </div>
+      @endif
     
       <div class="table-responsive small">
         <table class="table table-striped table-sm">

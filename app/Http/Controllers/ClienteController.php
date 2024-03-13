@@ -65,9 +65,24 @@ class ClienteController extends Controller
     }
 
     //editar no banco de dados 
-    public function update()
+    public function update(ClienteRequest $request, Cliente $cliente)
     {
-       dd('Atualizar');
+       //dd('Atualizar');
+        //validade campos formulario
+        $request->validated();
+
+        //editar informação no bd 
+        $cliente->update([
+            'nome' => $request->nome,
+            'fone' => $request->fone,
+            'cpf' => $request->cpf,
+            'email' => $request->email,
+            'nascimento' => $request->nascimento,
+        ]);
+
+        //redirecionamento de página
+       return redirect()->route('cliente.index')->with('sucesso', 'Cliente Atualizado com Sucesso!');
+
     }
 
     // excluir a conta do banco de dados 

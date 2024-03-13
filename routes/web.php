@@ -26,7 +26,7 @@ Route::get('/mostrar-cliente', [ClienteController::class, 'mostrar'])->name('cli
 Route::get('/editar-cliente/{cliente}', [ClienteController::class, 'editar'])->name('cliente.editar');
 
 //receber o editar 
-Route::put('/update-cliente', [ClienteController::class, 'update'])->name('cliente.update');
+Route::put('/update-cliente/{cliente}', [ClienteController::class, 'update'])->name('cliente.update');
 
 //excluir
 Route::delete('/destroy-cliente', [ClienteController::class, 'destroy'])->name('cliente.destroy');
