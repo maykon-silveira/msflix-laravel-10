@@ -11,15 +11,32 @@ use Illuminate\Http\Request;
 class ClienteController extends Controller
 {
     //listar clientes
-    public function index()
+    public function index(Request $request)
     {
         //buscar dados do banco de dados 
-        $cliente = Cliente::orderByDesc('created_at')->get();
+        //when é para adicionar condições dinamicas de consultas 
+        
+        // Recupere os termos de pesquisa do formulário
+        $termoDePesquisa = $request->input('pesquisa');
+  
+        $cliente = Cliente::where('nome', 'like', '%' . $termoDePesquisa . '%')
+        ->orWhere('cpf', 'like', '%' . $termoDePesquisa . '%')
+        ->orWhere('email', 'like', '%' . $termoDePesquisa . '%')
+        ->orderByDesc('created_at')
+        ->get();
 
+        /** 
+         * com paginação seria assim:  
+         * $cliente = Cliente::when($request->has('nome'), function ($buscar) use ($request){
+         * $buscar->where('nome', 'like', '%' .$request->nome . '%'); 
+       * })->orderByDesc('created_at')->paginate->(5)->withQueryString();  
+         */
         //dd($cliente);
 
         //carregar view
-        return view('cliente/index', ['cliente' => $cliente]);
+        return view('cliente/index', [
+            'cliente' => $cliente,
+        ]);
     }
 
     //detalhes do cliente

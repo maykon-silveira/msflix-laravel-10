@@ -344,6 +344,28 @@
       </div>
 
       
+      <div class="col-md-12 col-sm-12">
+        <div class="form-group">
+          <form action="{{ route('cliente.index') }}" >
+            <div class="row">
+
+            <div class="col-md-11 col-sm-12">
+              <input type="text" class="form-control" name="pesquisa" placeholder="Digite o nome do cliente">
+            </div>
+
+            <div class="col-md-1 col-sm-12">
+              <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+          </div>
+            
+          </form>
+        </div>
+        
+      </div>
+      <br>
+   
+
+      
       @if(session('sucesso'))
        <div class="alert alert-success">
        {{session('sucesso')}}
